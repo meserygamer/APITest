@@ -36,16 +36,13 @@ namespace ASPNet
 
             app.MapControllers();
 
-            //app.MapControllerRoute(
-            //            name: "default",
-            //            pattern: "{controller =Home}/{action=Index}/{id?}");
-
             app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("./v1/swagger.json", "v1");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
             });
 
             app.Run();

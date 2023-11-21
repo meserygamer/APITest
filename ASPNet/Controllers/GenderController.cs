@@ -6,9 +6,9 @@ namespace ASPNet.Controllers
     [ApiController]
     public class GenderController : Controller
     {
-        [Route("GetGenders/{id?}")]
+        [Route("GetGenders")]
         [HttpGet]
-        public IActionResult GetGenders(string? id)
+        public IActionResult GetGenders(int? id = null)
         {
             if (id is null)
             {
@@ -21,7 +21,7 @@ namespace ASPNet.Controllers
             {
                 using (ApiDbContext DB = new ApiDbContext())
                 {
-                    return Ok(DB.Genders.Find(Convert.ToInt32(id)));
+                    return Ok(DB.Genders.Find(id));
                 }
             }
             catch (Exception ex)
