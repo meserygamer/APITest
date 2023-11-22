@@ -17,7 +17,9 @@ public partial class User
 
     public DateTime? Birthdate { get; set; }
 
-    public virtual Gender Gender { get; set; } = null!;
+    [System.Text.Json.Serialization.JsonIgnore]
+    public virtual Gender? Gender { get; set; } = null!;
 
+    [System.Text.Json.Serialization.JsonIgnore]
     public virtual ICollection<UsersProduct> UsersProducts { get; set; } = new List<UsersProduct>();
 }

@@ -12,7 +12,7 @@ namespace ASPNet
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen(option =>
             {
-                option.SwaggerDoc("v1", new OpenApiInfo { Title = "", Version = "1v" });
+                option.SwaggerDoc("v1", new OpenApiInfo { Title = "Тест API", Version = "1v" });
                 option.TagActionsBy(api =>
                 {
                     if (api.GroupName != null)

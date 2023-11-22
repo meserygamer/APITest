@@ -11,5 +11,6 @@ public partial class Product
 
     public string? ProductDescription { get; set; }
 
+    [System.Text.Json.Serialization.JsonIgnore]
     public virtual ICollection<UsersProduct> UsersProducts { get; set; } = new List<UsersProduct>();
 }
